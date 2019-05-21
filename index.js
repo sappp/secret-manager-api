@@ -5,7 +5,9 @@ const uuidv4 = require('uuid');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const PORT = process.env.PORT || 8001
 const app = express({ origin: '*' });
+
 
 
 app.use(cors({ origin: true }));
@@ -108,7 +110,7 @@ app.delete("/secrets/:secretId", function (req, res) {
 });
 
 
-app.listen(8001, () => console.log("api server listening on port 8001!"));
+app.listen(PORT, () => console.log(`api server listening on port  ${PORT}`));
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
