@@ -1,5 +1,3 @@
-// const functions = require('firebase-functions');
-
 const express = require('express');
 const uuidv4 = require('uuid');
 const bodyParser = require('body-parser');
@@ -55,20 +53,13 @@ let secretsDb = {
     createdAt: "Mon May 20 2019"
   }
 };
-// app.use((request, response, next) => {
-//   response.header("Access-Control-Allow-Origin", "*");
-//   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-//   next();
-// })
+
 app.get("/secrets", (req, res) => {
-  // return res.send(Object.values(secretsDb).map(secret => ({ id: secret.id, name: secret.name })));
   return res.send(Object.keys(secretsDb).map((k) => ({ id: secretsDb[k].id, name: secretsDb[k].name })));
   
 });
 
 app.get("/secrets/:secretId", (req, res) => {
-  // res.set('Access-Control-Allow-Origin', '*');
-  console.log(secretsDb[req.params.secretId])
   return res.send(secretsDb[req.params.secretId]);
 });
 
@@ -111,8 +102,3 @@ app.delete("/secrets/:secretId", function (req, res) {
 
 
 app.listen(PORT, () => console.log(`api server listening on port  ${PORT}`));
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.app = functions.https.onRequest(app)
