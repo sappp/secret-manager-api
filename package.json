@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel index.js --out-dir functions --copy-files --ignore /node_modules",
-    "build-funcs": "babel functions --out-dir dist"
+    "build": "babel index.js --out-dir functions --copy-files --ignore /node_modules"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +20,10 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
-    "@babel/env": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "rimraf": "^2.6.3"
+  },
+  "engines": {
+    "node": "10.1.0"
   }
 }
